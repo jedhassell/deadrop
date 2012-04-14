@@ -1,0 +1,10 @@
+creating drop
+
+= password_field_tag :password
+
+= text_area_tag :text
+
+= form_tag nil, {id: 'create_form'} do
+  = hidden_field_tag :encrypted_object
+
+= button_tag :button, id: 'create_button'
