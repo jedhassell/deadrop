@@ -2,4 +2,12 @@
   %h1 Wecome
   %p text and stuffs
   %p
-    = link_to 'Create Drop', {}, :class => "btn btn-primary btn-large"
+    = form_tag 'create_drop', class: 'form_search' do
+      = text_field_tag :drop_name, nil, class: 'input-medium search-query'
+      = button_tag 'Create Drop', class: 'btn btn-primary btn-large'
+
+
+-#<form class="well form-search">
+-#  <input type="text" class="input-medium search-query">
+-#  <button type="submit" class="btn">Search</button>
+-#</form>
