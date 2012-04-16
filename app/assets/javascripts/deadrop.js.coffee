@@ -11,12 +11,12 @@ $ ->
     $('#encrypted_object').val(encrypted_text)
     $('#create_form').submit()
 
-  $('#key').keyup () ->
-    password = $('#key').val()
+  $('#password').keyup () ->
+    password = $('#password').val()
     encrypted_object = $('#encrypted_text').val()
     try
       plain_text = sjcl.decrypt(password, encrypted_object)
-      $('#key').attr('disabled', 'disabled')
+      $('#password').attr('disabled', 'disabled')
       $('#encrypted_text').val(plain_text)
     catch err
 

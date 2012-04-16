@@ -117,6 +117,6 @@ DEPENDENCIES
   haml
   jquery-rails
   mongoid
-  rails (= 3.2.3)
+  rails
   sass-rails
-  uglifier (>= 1.0.3)
+  uglifier

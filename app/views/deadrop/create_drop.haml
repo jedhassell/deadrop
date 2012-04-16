@@ -1,10 +1,33 @@
-creating drop
-
-= password_field_tag :password
-
-= text_area_tag :text
+.form-horizontal
+  %fieldset
+    %legend Create a Drop LINKHERE
+    .control-group
+      %label.control-label{for: 'password'} Password
+      .controls
+        = password_field_tag :password, nil, class: 'input-xxlarge'
+        %p.help_block Your encryption key
+    .control-group
+      %label.control-label{for: 'text'} Message
+      .controls
+        = text_area_tag :text, nil, class: 'input-xxlarge drop_message'
+        -#%p.help_block Help text here
+    .form-actions
+      = button_tag 'Create Drop', id: 'create_button', class: 'btn btn-primary'
 
 = form_tag nil, {id: 'create_form'} do
   = hidden_field_tag :encrypted_object
-
-= button_tag :button, id: 'create_button'
+-#
+-#
+-#
+-#<form class="form-horizontal">
+-#  <fieldset>
+-#    <legend>Legend text</legend>
+-#    <div class="control-group">
+-#      <label class="control-label" for="input01">Text input</label>
+-#      <div class="controls">
+-#        <input type="text" class="input-xlarge" id="input01">
+-#        <p class="help-block">Supporting help text</p>
+-#      </div>
+-#    </div>
+-#  </fieldset>
+-#</form>
