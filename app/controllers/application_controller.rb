@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
     drop_name = params[:drop_name]
     # add code here to check to see if drop exist?
 
-    redirect_to controller: 'deadrop', action: drop_name
+    redirect_to "/#{drop_name}"
   end
 end
