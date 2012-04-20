@@ -5,10 +5,10 @@
       In today’s world, it is hard to have a private conversation via anything but face-to-face communication.
       To learn how Deadrop works, check out our
       = succeed ',' do
-        %a{:href => 'how_it_works'} How it Works page
+        = link_to 'How it Works page', controller: 'how_it_works', action: 'how_it_works'
       our
       = succeed ',' do
-        = link_to 'Frequently asked Questions page', action: 'FAQ'
+        = link_to 'Frequently asked Questions page', controller: 'application', action: 'FAQ'
       or our
       = succeed '.' do
         = link_to 'Blog', 'http://deadropus.blogspot.com'
