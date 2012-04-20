@@ -1,10 +1,23 @@
-.hero-unit
-  %h1 Welcome
-  %p text and stuffs
-  %p
-    = form_tag 'create_drop', class: 'form_search' do
-      = text_field_tag :drop_name, nil, class: 'input-medium search-query', placeholder: 'Random'
-      = button_tag 'Create Drop', class: 'btn btn-primary btn-large'
+.content_pane
+  %h1.header Welcome to Deadrop
+  .left_column
+    %p
+      In today’s world, it is hard to have a private conversation via anything but face-to-face communication.
+      To learn how Deadrop works, check out our
+      = succeed ',' do
+        %a{:href => 'how_it_works'} How it Works page
+      our
+      = succeed ',' do
+        = link_to 'Frequently asked Questions page', action: 'FAQ'
+      or our
+      = succeed '.' do
+        = link_to 'Blog', 'http://deadropus.blogspot.com'
+      If you want to jump right in, just click the “Create Drop” button below.
+  .left_column
+    %p
+      = form_tag 'create_drop', class: 'form_search' do
+        = text_field_tag :drop_name, nil, class: 'input-medium search-query', placeholder: 'Random'
+        = button_tag 'Create Drop', class: 'btn btn-primary btn-large'
 
 
 -#<form class="well form-search">

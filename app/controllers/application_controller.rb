@@ -13,4 +13,5 @@ class ApplicationController < ActionController::Base
 
     redirect_to "/#{drop_name}"
   end
+
 end

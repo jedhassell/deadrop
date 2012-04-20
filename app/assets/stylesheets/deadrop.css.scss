@@ -2,8 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.drop_message
-{
+.drop_message {
   height: 400px;
+}
+
+.header
+{
+  padding-top: 20px;
+  margin-bottom: 20px;
+  font-size: 36pt;
+
+}
+
+.content_pane {
+  min-height: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  background-color: #f5f5f5;
+  //border: 1px solid #eee;
+  //border: 1px solid rgba(0, 0, 0, 0.05);
+  //-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  //-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  //padding: 24px;
+  //-webkit-border-radius: 6px;
+  //-moz-border-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.left_column
+{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 550px;
+
 }

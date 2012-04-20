@@ -52,6 +52,8 @@ Deadrop::Application.routes.draw do
   #get ':key' => 'application#deadrop'
 
   post 'create_drop' => 'application#create_drop'
+  get 'faq' => 'application#faq'
+  get 'how_it_works' => 'application#how_it_works'
   get ':key' => 'deadrop#index'
   post ':key' => 'deadrop#create_drop_from_form'
   root :to => 'application#index'
