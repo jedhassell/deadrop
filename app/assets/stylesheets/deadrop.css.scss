@@ -6,8 +6,7 @@
   height: 400px;
 }
 
-.header
-{
+.header {
   padding-top: 20px;
   margin-bottom: 20px;
   font-size: 36pt;
@@ -31,10 +30,22 @@
   border-bottom-right-radius: 6px;
 }
 
-.left_column
-{
+.left_column {
   margin-top: 20px;
   margin-bottom: 20px;
   width: 550px;
 
 }
+
+fieldset.fieldset_with_header {
+  legend {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-size: 32pt;
+  }
+
+}
+
+//h1, .jed {
+//  font-family: impact, league-gothic, "Helvetica Neue", Helvetica, Arial, sans-serif;
+//}

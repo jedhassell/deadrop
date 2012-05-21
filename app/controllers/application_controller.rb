@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
     drop_name = (0..5).map { rand(36).to_s(36) }.join if drop_name.empty?
 
-    redirect_to "/#{drop_name}"
+    redirect_to URI.escape "/#{drop_name}"
   end
 
 end

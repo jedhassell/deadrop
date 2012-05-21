@@ -17,6 +17,6 @@ class DeadropController < ApplicationController
     drop['data'] = params[:encrypted_object]
     drop.save!
 
-    redirect_to "/#{params[:key]}"
+    redirect_to URI.escape "/#{params[:key]}"
   end
 end
