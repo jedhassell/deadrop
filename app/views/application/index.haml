@@ -13,11 +13,7 @@
       = succeed '.' do
         = link_to 'Blog', 'http://deadropus.blogspot.com', target: "_blank"
       If you want to jump right in, just click the “Create Drop” button below.
-  .left_column
-    %p
-      = form_tag 'create_drop', class: 'form_search' do
-        = text_field_tag :drop_name, nil, class: 'input-medium search-query', placeholder: 'Random'
-        = button_tag 'Create Drop', class: 'btn btn-primary btn-large'
+  = render 'create_form'
 
 
 -#<form class="well form-search">

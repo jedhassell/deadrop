@@ -2,9 +2,12 @@
   %h1.header How it Works
   .left_column
     %p
-      Deadrop is dedicated to keeping your communications private.  As a first iteration, you will have the capability
-      to post large messages of any text completely secure and encrypted.  Only a person who has the link with the
-      encryption key will be able to read the message which is encrypted and decrypted on the user’s computer so the
-      server never sees the encryption key or unencrypted text.  See our tutorial to get started or just create a new
-      drop below.  although no method is completely secure, there are inherent risk to javascript encryption that is
-      addressed in our blog.
+      Deadrop is dedicated to keeping your communications private and secure. As a first iteration, you will have the
+      capability to post large messages completely secure and
+      = succeed '.' do
+        = link_to 'encrypted', 'http://en.wikipedia.org/wiki/Encryption'
+      Only a person who has the unique link (ex: 'http://deadrop.us/my_secret_message') and the encryption key
+      (password) will be able to read the message. The message is encrypted and decrypted on the user’s computer so the server never has access the encryption key (password) or the unencrypted message. See our tutorial to get started or just create a new drop below.  Although no method is completely secure, there are inherent risk to Javascript encryption that is addressed in our
+      = succeed '.' do
+        = link_to 'blog', 'http://deadropus.blogspot.com/'
+  = render 'create_form'

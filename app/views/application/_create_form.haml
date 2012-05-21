@@ -1,0 +1,5 @@
+.left_column
+  %p
+    = form_tag 'create_drop', class: 'form_search' do
+      = text_field_tag :drop_name, nil, class: 'input-medium search-query', placeholder: 'Random'
+      = button_tag 'Create Drop', class: 'btn btn-primary btn-large'
