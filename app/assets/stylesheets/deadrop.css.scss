@@ -9,8 +9,7 @@
 .header {
   padding-top: 20px;
   margin-bottom: 20px;
-  font-size: 36pt;
-
+  font-size: 42pt;
 }
 
 .content_pane {
@@ -43,7 +42,11 @@ fieldset.fieldset_with_header {
     margin-bottom: 20px;
     font-size: 32pt;
   }
+}
 
+p{
+  font-size: 15px;
+  line-height: 19px;
 }
 
 //h1, .jed {
