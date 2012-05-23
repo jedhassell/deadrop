@@ -15,6 +15,7 @@ class DeadropController < ApplicationController
     drop = Drop.new()
     drop['drop'] = params[:key]
     drop['data'] = params[:encrypted_object]
+    drop['create_time'] = Time.now
     drop.save!
 
     redirect_to URI.escape "/#{params[:key]}"

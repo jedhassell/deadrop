@@ -1,6 +1,11 @@
 // Place all the styles related to the deadrop controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-repeat: repeat-x;
+  background-position: 0 40px;
+  background-image: url("http://twitter.github.com/bootstrap/assets/img/grid-18px-masked.png")
+}
 
 .drop_message {
   height: 400px;
