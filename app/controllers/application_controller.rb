@@ -1,11 +1,17 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  #def create_chat_room
-  #  chat_room_name = params[:chat_room_name]
-  #  chat_room_name = get_random_name if chat_room_name.empty?
-  #
-  #  redirect_to controller: "chat_room", id: chat_room_name
-  #end
+  def index
+    # create random string here for index
+  end
+
+  def create_drop
+    drop_name = params[:drop_name]
+    # add code here to check to see if drop exist?
+
+    drop_name = (0..5).map { rand(36).to_s(36) }.join if drop_name.empty?
+
+    redirect_to URI.escape "/#{drop_name}"
+  end
 
 end

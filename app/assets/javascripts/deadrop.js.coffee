@@ -1,3 +1,7 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+
 $ ->
   $('#create_button').click ->
     password = $('#password').val()
@@ -15,9 +19,6 @@ $ ->
       $('#password').attr('disabled', 'disabled')
       $('#encrypted_text').val(plain_text)
     catch err
-
-window.onbeforeunload = ->
-  alert 'hello'
 
 #    alert password
 #  test = sjcl.encrypt("password", "this is the test data for the test")

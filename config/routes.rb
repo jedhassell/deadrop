@@ -1,5 +1,4 @@
 Deadrop::Application.routes.draw do
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -52,34 +51,12 @@ Deadrop::Application.routes.draw do
 
   #get ':key' => 'application#deadrop'
 
-
+  post 'create_drop' => 'application#create_drop'
   get 'faq' => 'application#faq'
   get 'how_it_works' => 'application#how_it_works'
-
-  #deadrop
-  post 'deadrop/create_drop' => 'deadrop#create_drop'
-  get 'deadrop/:key' => 'deadrop#index'
-  get 'deadrop' => 'deadrop#index_blank'
-  post 'deadrop/:key' => 'deadrop#create_drop_from_form'
-
-  #chat_room
-  post 'chat_room/create_drop' => 'chat_room#create_chat_room'
-  get 'chat_room/:key' => 'chat_room#index'
-  get 'chat_room' => 'chat_room#index_blank'
-  post 'chat_room/:key' => 'chat_room#create_chat_room_from_form'
-
-  #get 'chat_room/:key' => 'chat_room#index'
-  #post 'chat_room/:key' => 'chat_room#create_chat_room_from_form'
-  #
-  #post 'create_chat_room' => 'application#create_chat_room'
-
-  #keep backwards compatible
-  get ':key', :to => redirect("/deadrop/%{key}")
-
+  get ':key' => 'deadrop#index'
+  post ':key' => 'deadrop#create_drop_from_form'
   root :to => 'application#index'
-
-
-
 
   # See how all your routes lay out with "rake routes"
 
