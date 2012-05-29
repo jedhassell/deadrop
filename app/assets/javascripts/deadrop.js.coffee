@@ -16,8 +16,8 @@ $ ->
       $('#encrypted_text').val(plain_text)
     catch err
 
-window.onbeforeunload = ->
-  alert 'hello'
+#window.onbeforeunload = ->
+#  alert 'hello'
 
 #    alert password
 #  test = sjcl.encrypt("password", "this is the test data for the test")
