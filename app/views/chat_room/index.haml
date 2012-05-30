@@ -12,7 +12,7 @@
       .control-group
         %label.control-label{for: 'text'} Message
         .controls
-          = text_area_tag :text, nil, class: 'input-xxlarge drop_message'
+          = text_area_tag :text, nil, class: 'input-xxlarge chat_entry'
           -#%p.help_block Help text here
       .form-actions
         = button_tag 'Create Message', id: 'create_message', class: 'btn btn-primary'
