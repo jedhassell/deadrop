@@ -15,7 +15,7 @@
           = text_area_tag :text, nil, class: 'input-xxlarge drop_message'
           -#%p.help_block Help text here
       .form-actions
-        = button_tag 'Create Chat Room', id: 'create_button', class: 'btn btn-primary'
+        = button_tag 'Create Chat Room', id: 'create_chat', class: 'btn btn-primary'
 
   = form_tag nil, {id: 'create_form'} do
-    = hidden_field_tag :encrypted_object
+    = hidden_field_tag :encrypted_message

@@ -15,7 +15,7 @@ class ChatRoomController < ApplicationController
   def create_chat_room_from_form
     message = ChatMessage.new()
     message['chat_name'] = params[:key]
-    message['data'] = params[:encrypted_object]
+    message['data'] = params[:encrypted_message]
     message['create_time'] = Time.now
     message.save!
 

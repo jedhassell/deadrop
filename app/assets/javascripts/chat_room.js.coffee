@@ -1,11 +1,13 @@
+password_disabled = false
+
 $ ->
-  $('#create_button').click ->
+  $('#create_chat').click ->
     password = $('#password').val()
     text = $('#text').val()
     encrypted_text = sjcl.encrypt(password, text)
 
-    $('#encrypted_object').val(encrypted_text)
-    $('#add_message').submit()
+    $('#encrypted_message').val(encrypted_text)
+    $('#create_form').submit()
 
   $('#create_message').click ->
     password = $('#password').val()
@@ -17,9 +19,13 @@ $ ->
 
   $('#password').keyup () ->
     password = $('#password').val()
-    encrypted_object = $('#encrypted_text').val()
-    try
-      plain_text = sjcl.decrypt(password, encrypted_object)
-      $('#password').attr('disabled', 'disabled')
-      $('#encrypted_text').val(plain_text)
-    catch err
+
+    $('.message').each (i, message) ->
+      encrypted_object = $(message).val()
+      try
+        plain_text = sjcl.decrypt(password, encrypted_object)
+        unless password_disabled
+          $('#password').attr('disabled', 'disabled')
+          password_disabled = true
+        $(message).val(plain_text)
+      catch err
