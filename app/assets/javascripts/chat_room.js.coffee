@@ -40,8 +40,10 @@ get_new_messages = ->
     $('#messages').prepend(data)
     if(password_disabled && data != '')
       decrypt_messages()
+
+    setTimeout(get_new_messages, 1000)
   )
-  setTimeout(get_new_messages, 1000)
+
 
 decrypt_messages = ->
   password = $('#password').val()
