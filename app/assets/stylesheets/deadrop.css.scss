@@ -1,7 +1,7 @@
 // Place all the styles related to the deadrop controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body{
+body {
   background-repeat: repeat-x;
   background-position: 0 40px;
   background-image: url("grid-18px-masked.png")
@@ -9,9 +9,16 @@ body{
 
 .drop_message {
   height: 400px;
+
 }
 
-.chat_entry{
+.message {
+  word-wrap: break-word;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.chat_entry {
   height: 100px;
 }
 
@@ -53,7 +60,7 @@ fieldset.fieldset_with_header {
   }
 }
 
-p{
+p {
   font-size: 15px;
   line-height: 19px;
 }

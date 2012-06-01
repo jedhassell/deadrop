@@ -3,12 +3,17 @@
 .content_pane
   .form-horizontal
     %fieldset.fieldset_with_header
-      %legend Drop
+      %legend Chat Room
       .control-group
         %label.control-label{for: 'password'} Password
         .controls
           = password_field_tag :password, nil, class: 'input-xxlarge'
           %p.help_block Your encryption key
+      .control-group
+        %label.control-label{for: 'password'} Username
+        .controls
+          = text_field_tag :username_display, nil, class: 'input-xxlarge'
+          %p.help_block Username to display on message
       .control-group
         %label.control-label{for: 'text'} Message
         .controls
@@ -16,11 +21,8 @@
           -#%p.help_block Help text here
       .form-actions
         = button_tag 'Create Message', id: 'create_message', class: 'btn btn-primary'
-        = form_tag nil, {id: 'create_message_form'} do
-          = hidden_field_tag :encrypted_message
-      - @messages.each do |message|
-        .control-group
-          %label.control-label{for: 'encrypted_text'} Message
-          .controls
-            = text_area_tag :encrypted_text, message.data, class: 'input-xxlarge message', readonly: true
-            -#%p.help_block Help text hereta
+        -#= form_tag nil, {id: 'create_message_form'} do
+        -#= hidden_field_tag :encrypted_message
+        -#= hidden_field_tag :username
+      #messages= render :partial => 'messages'
+      = hidden_field_tag :chat_room_name, params[:key]

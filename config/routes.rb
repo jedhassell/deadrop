@@ -63,6 +63,8 @@ Deadrop::Application.routes.draw do
   post 'deadrop/:key' => 'deadrop#create_drop_from_form'
 
   #chat_room
+  post 'chat_room/get_new_messages' => 'chat_room#get_new_messages'
+  post 'chat_room/create_message' => 'chat_room#create_message'
   post 'chat_room/create_drop' => 'chat_room#create_chat_room'
   get 'chat_room/:key' => 'chat_room#index'
   get 'chat_room' => 'chat_room#index_blank'

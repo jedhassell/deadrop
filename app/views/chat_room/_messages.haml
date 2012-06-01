@@ -1,0 +1,6 @@
+- @messages.each do |message|
+  .control-group
+    %label.control-label{for: 'encrypted_text'}= message.username
+    .controls
+      %p#encrytped_test.input-xxlarge.message= message.data
+      -#%p.help_block Help text hereta

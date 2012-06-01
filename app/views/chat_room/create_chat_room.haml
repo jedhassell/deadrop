@@ -10,6 +10,11 @@
           = password_field_tag :password, nil, class: 'input-xxlarge'
           %p.help_block Your encryption key
       .control-group
+        %label.control-label{for: 'password'} Username
+        .controls
+          = text_field_tag :username_display, nil, class: 'input-xxlarge'
+          %p.help_block Username to display on message
+      .control-group
         %label.control-label{for: 'text'} Message
         .controls
           = text_area_tag :text, nil, class: 'input-xxlarge drop_message'
@@ -19,3 +24,4 @@
 
   = form_tag nil, {id: 'create_form'} do
     = hidden_field_tag :encrypted_message
+    = hidden_field_tag :username
