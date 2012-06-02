@@ -14,7 +14,7 @@ body {
 
 .message {
   word-wrap: break-word;
-  background-color: white;
+  background-color: #eeeeee;
   border-radius: 5px;
 }
 
@@ -63,6 +63,14 @@ fieldset.fieldset_with_header {
 p {
   font-size: 15px;
   line-height: 19px;
+}
+
+.message_label
+{
+  padding-top: 0px !important;
+  .time{
+    font-size: 10px;
+  }
 }
 
 //h1, .jed {

@@ -42,7 +42,7 @@ class ChatRoomController < ApplicationController
     message = ChatMessage.new()
     message['chat_name'] = params[:key]
     message['data'] = params[:encrypted_message]
-    message['username'] = "#{session[:animal]}_#{params[:username]}"
+    message['username'] = "#{session[:animal]} #{params[:username].empty? ? '' : "(#{params[:username]})"}"
     message['create_time'] = Time.now
     message.save!
 

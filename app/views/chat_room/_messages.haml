@@ -1,6 +1,8 @@
 - @messages.each do |message|
   .control-group
-    %label.control-label{for: 'encrypted_text'}= message.username
+    %label.control-label.message_label{for: 'encrypted_text'}
+      = message.username
+      .time= message.create_time.strftime("%m-%d-%Y %H:%M:%S")
     .controls
       %p#encrytped_test.input-xxlarge.message= message.data
-      -#%p.help_block Help text hereta
+      -#%p.help_block Help text here
