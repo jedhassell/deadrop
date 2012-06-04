@@ -1,4 +1,5 @@
 password_disabled = false
+timer = null
 
 $ ->
   setTimeout(get_new_messages, 1000)
@@ -23,6 +24,10 @@ $ ->
       )
 
   $('#password').keyup(decrypt_messages)
+  $(window).focus( ->
+    clearTimeout(timer)
+    document.title = "Deadrop"
+  )
 
 password_correct = ->
   unless password_disabled
@@ -40,6 +45,7 @@ get_new_messages = ->
     $('#messages').prepend(data)
     if(password_disabled && data != '')
       decrypt_messages()
+      new_message_alert()
 
     setTimeout(get_new_messages, 1000)
   )
@@ -54,3 +60,11 @@ decrypt_messages = ->
       password_correct()
       $(message).html(plain_text)
     catch err
+
+new_message_alert = ->
+  document.title = "MESSAGE!"
+  timer = setTimeout(new_message_alert_lower, 1000)
+
+new_message_alert_lower = ->
+  document.title = "message!"
+  timer = setTimeout(new_message_alert, 1000)
