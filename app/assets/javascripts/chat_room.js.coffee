@@ -1,5 +1,5 @@
 password_disabled = false
-timer = null
+focus_state = 'focus'
 
 $ ->
   setTimeout(get_new_messages, 1000)
@@ -24,9 +24,13 @@ $ ->
       )
 
   $('#password').keyup(decrypt_messages)
-  $(window).focus( ->
-    window.clearTimeout(timer)
-    document.title = "Deadrop"
+
+  $(window).focus(->
+    focus_state = 'focus'
+  )
+
+  $(window).blur(->
+    focus_state = 'blur'
   )
 
 password_correct = ->
@@ -62,9 +66,12 @@ decrypt_messages = ->
     catch err
 
 new_message_alert = ->
-  document.title = "MESSAGE!"
-  timer = window.setTimeout(new_message_alert_lower, 1000)
+  if(focus_state == 'focus')
+    document.title = "Deadrop"
+  else if (focus_state == 'blur')
+    if(document.title == "MESSAGE!")
+      document.title = "message!"
+    else
+      document.title = "MESSAGE!"
 
-new_message_alert_lower = ->
-  document.title = "message!"
-  timer = window.setTimeout(new_message_alert, 1000)
+    window.setTimeout(new_message_alert, 1000)
