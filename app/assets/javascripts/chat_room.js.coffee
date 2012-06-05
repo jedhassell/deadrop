@@ -7,21 +7,22 @@ $ ->
   $('#create_message').attr('disabled', 'disabled')
 
   $('#create_message').click ->
-    text = $('#text').val()
-    unless(text == '')
-      password = $('#password').val()
+    if password_disabled
+      text = $('#text').val()
+      unless(text == '')
+        password = $('#password').val()
 
-      defaults =
-        ks: 256
-        ts: 128
+        defaults =
+          ks: 256
+          ts: 128
 
-      params =
-        encrypted_message: sjcl.encrypt(password, text, defaults)
-        username: $('#username_display').val()
-        key: $('#chat_room_name').val()
-      $.post('create_message', params, ->
-        $('#text').val('')
-      )
+        params =
+          encrypted_message: sjcl.encrypt(password, text, defaults)
+          username: $('#username_display').val()
+          key: $('#chat_room_name').val()
+        $.post('create_message', params, ->
+          $('#text').val('')
+        )
 
   $('#password').keyup(decrypt_messages)
 
@@ -32,6 +33,12 @@ $ ->
   $(window).blur(->
     focus_state = 'blur'
   )
+
+  $('#text').keyup((event) ->
+    if (event.keyCode == 13)
+      $('#create_message').click()
+  )
+
 
 password_correct = ->
   unless password_disabled
