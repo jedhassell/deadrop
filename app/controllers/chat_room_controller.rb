@@ -10,6 +10,10 @@ class ChatRoomController < ApplicationController
     end
   end
 
+  def index_blank
+    redirect_to "/chat_room/#{(0..5).map { rand(36).to_s(36) }.join}"
+  end
+
   def get_new_messages
     current_count = params[:message_count].to_i
     mongo_count = ChatMessage.where(chat_name: params[:key]).count
@@ -18,10 +22,6 @@ class ChatRoomController < ApplicationController
       @messages = ChatMessage.where(chat_name: params[:key]).order_by(:create_time, :desc).limit(mongo_count - current_count)
     end
     render :partial => 'messages'
-  end
-
-  def index_blank
-    redirect_to "/chat_room/#{(0..5).map { rand(36).to_s(36) }.join}"
   end
 
   def create_chat_room_from_form
