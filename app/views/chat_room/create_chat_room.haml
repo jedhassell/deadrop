@@ -17,7 +17,7 @@
       .control-group
         %label.control-label{for: 'text'} Message
         .controls
-          = text_area_tag :text, nil, class: 'input-xxlarge drop_message'
+          = text_area_tag :text, nil, class: 'input-xxlarge drop_message', maxlength: 10000
           -#%p.help_block Help text here
       .form-actions
         = button_tag 'Create Chat Room', id: 'create_chat', class: 'btn btn-primary'
