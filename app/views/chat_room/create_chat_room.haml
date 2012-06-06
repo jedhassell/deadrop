@@ -12,7 +12,7 @@
       .control-group
         %label.control-label{for: 'password'} Username
         .controls
-          = text_field_tag :username_display, nil, class: 'input-xxlarge'
+          = text_field_tag :username_display, nil, class: 'input-xxlarge', limit: 30
           %p.help_block Username to display on message
       .control-group
         %label.control-label{for: 'text'} Message

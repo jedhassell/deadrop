@@ -2,9 +2,11 @@
 
 .content_pane
   %h1.header Welcome to Deadrop
-  .left_column
+  .span6
     %p
-      In today’s world, it is hard to have a private conversation via anything but face-to-face communication.
+      We enable simple and secure communication via the web browser.
+      -#In today’s world, it is hard to have a private conversation via anything but face-to-face communication.
+
       To learn how Deadrop works, check out our
       = succeed ',' do
         = link_to 'How it Works page', controller: 'application', action: 'how_it_works'
@@ -14,8 +16,20 @@
       or our
       = succeed '.' do
         = link_to 'Blog', 'http://deadropus.blogspot.com', target: "_blank"
-      If you want to jump right in, just click the “Create Drop” button below.
+      %h2 Get Started!
+      %ol
+        %li Click on 'Create Drop' or 'Create Chat' below
+        %li Enter a password to secure your message
+        %li Submit and send or tell the URL to someone
+  .span3.offset1
+    %h2 What's New?
+    %p
+      Deadrop.us now supports
+      = succeed '!' do
+        = link_to 'Chat Rooms', chat_room_path
+      Click the 'Create Chat' button to get started.
   = render 'create_form'
+  .clearfix
 
 -#<form class="well form-search">
 -#  <input type="text" class="input-medium search-query">

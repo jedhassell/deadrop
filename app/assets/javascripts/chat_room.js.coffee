@@ -1,15 +1,16 @@
 password_disabled = false
 focus_state = 'focus'
+messenger_timer = []
 
 $ ->
-  setTimeout(get_new_messages, 1000)
+  setInterval(get_new_messages, 1000)
 
   $('#create_message').attr('disabled', 'disabled')
 
   $('#create_message').click ->
     if password_disabled
       text = $('#text').val()
-      unless(text == '')
+      unless(text.trim() == '')
         password = $('#password').val()
 
         defaults =
@@ -57,8 +58,7 @@ get_new_messages = ->
     if(password_disabled && data != '')
       decrypt_messages()
       new_message_alert()
-
-    window.setTimeout(get_new_messages, 1000)
+      messenger_timer.push(setInterval(new_message_alert, 1000))
   )
 
 
@@ -74,11 +74,15 @@ decrypt_messages = ->
 
 new_message_alert = ->
   if(focus_state == 'focus')
-    document.title = "Deadrop"
+    document.title = $('#chat_room_name').val()
+    clear_messenger_timers()
   else if (focus_state == 'blur')
     if(document.title == "MESSAGE!")
-      document.title = "message!"
+      document.title = $('#chat_room_name').val()
     else
       document.title = "MESSAGE!"
 
-    window.setTimeout(new_message_alert, 1000)
+clear_messenger_timers = ->
+  for timer in messenger_timer
+    clearInterval(timer)
+  messenger_timer = []
