@@ -1,6 +1,7 @@
 password_disabled = false
 focus_state = 'focus'
 messenger_timer = []
+in_ajax_request = false
 
 $ ->
   setInterval(get_new_messages, 1000)
@@ -48,18 +49,21 @@ password_correct = ->
     password_disabled = true
 
 get_new_messages = ->
-  messages_count = $('.message').length
-  params =
-    message_count: messages_count
-    key: $('#chat_room_name').val()
+  unless(in_ajax_request)
+    in_ajax_request = true
+    messages_count = $('.message').length
+    params =
+      message_count: messages_count
+      key: $('#chat_room_name').val()
 
-  $.post('get_new_messages', params, (data) ->
-    $('#messages').prepend(data)
-    if(password_disabled && data != '')
-      decrypt_messages()
-      new_message_alert()
-      messenger_timer.push(setInterval(new_message_alert, 1000))
-  )
+    $.post('get_new_messages', params, (data) ->
+      in_ajax_request = false
+      $('#messages').prepend(data)
+      if(password_disabled && data != '')
+        decrypt_messages()
+        new_message_alert()
+        messenger_timer.push(setInterval(new_message_alert, 1000))
+    )
 
 
 decrypt_messages = ->
