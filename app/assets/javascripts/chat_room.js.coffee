@@ -11,6 +11,7 @@ $ ->
   $('#create_message').click ->
     if password_disabled
       text = $('#text').val()
+      $('#text').val('')
       unless(text.trim() == '')
         password = $('#password').val()
 
@@ -22,9 +23,7 @@ $ ->
           encrypted_message: sjcl.encrypt(password, text, defaults)
           username: $('#username_display').val()
           key: $('#chat_room_name').val()
-        $.post('create_message', params, ->
-          $('#text').val('')
-        )
+        $.post('create_message', params)
 
   $('#password').keyup(decrypt_messages)
 

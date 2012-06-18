@@ -2,7 +2,11 @@ $ ->
   $('#create_button').click ->
     password = $('#password').val()
     text = $('#text').val()
-    encrypted_text = sjcl.encrypt(password, text)
+
+    defaults =
+      ks: 256
+      ts: 128
+    encrypted_text = sjcl.encrypt(password, text, defaults)
 
     $('#encrypted_object').val(encrypted_text)
     $('#create_form').submit()
