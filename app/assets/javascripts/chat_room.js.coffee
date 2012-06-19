@@ -2,6 +2,7 @@ password_disabled = false
 focus_state = 'focus'
 messenger_timer = []
 in_ajax_request = false
+counter = 0 # retry in 60 seconds in case request timed out
 
 $ ->
   setInterval(get_new_messages, 1000)
@@ -48,7 +49,9 @@ password_correct = ->
     password_disabled = true
 
 get_new_messages = ->
-  unless(in_ajax_request)
+  counter += 1
+  unless(in_ajax_request || counter > 60)
+    counter = 0
     in_ajax_request = true
     messages_count = $('.message').length
     params =
