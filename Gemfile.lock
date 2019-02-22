@@ -130,3 +130,9 @@ DEPENDENCIES
   rspec
   sass-rails
   uglifier
+
+RUBY VERSION
+   ruby 1.9.3p551
+
+BUNDLED WITH
+   1.17.3
