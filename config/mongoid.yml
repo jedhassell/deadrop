@@ -81,4 +81,4 @@ test:
 production:
   clients:
     default:
-      uri: 'mongodb://heroku_app4005845_A:DFTLTjLgjDynyMieFJgLgpKUvfQWyyno@ds031847.mongolab.com:31847/heroku_app4005845'
+      uri: "mongodb://heroku_app4005845_A:DFTLTjLgjDynyMieFJgLgpKUvfQWyyno@ds031847.mongolab.com:31847/heroku_app4005845"
